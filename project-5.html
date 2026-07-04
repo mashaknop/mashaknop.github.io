@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDDesign Award — Maria Knop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #2E2E28;
+      --gray: rgba(46, 46, 40, 0.5);
+      /* 50% opacity of #2E2E28 */
+      --white: #FFFFFF;
+      --accent: #B5A494;
+      /* beige accent for consistency with home page */
+      --bg-light: #F9F9F9;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ───────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 48px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(46, 46, 40, 0.05);
+    }
+
+    .nav-logo {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .nav-logo:hover {
+      opacity: 0.7;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.5;
+    }
+
+    /* ── Project Header ────────────────────────────── */
+    .project-header-section {
+      max-width: 1000px;
+      margin: 160px auto 64px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      column-gap: 48px;
+      row-gap: 32px;
+    }
+
+    .project-title-container {
+      grid-column: 1 / -1;
+    }
+
+    .project-title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 46pt;
+      font-weight: bold;
+      color: var(--black);
+      line-height: 1.1;
+      margin: 0;
+      letter-spacing: -0.03em;
+    }
+
+    .project-meta {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 12pt;
+      font-weight: normal;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .project-meta-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: var(--gray);
+    }
+
+    .project-meta-value {
+      font-weight: normal;
+    }
+
+    .project-description {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14pt;
+      font-weight: normal;
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    .project-description p {
+      margin-bottom: 24px;
+    }
+
+    .project-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Image Gallery ─────────────────────────────── */
+    .project-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      /* 8px distance between images */
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto 120px;
+      padding: 0 20px;
+    }
+
+    .project-image-wrapper {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      border: 1px solid rgba(46, 46, 40, 0.05);
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .project-image-wrapper:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .project-image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── Empty Square Placeholder ── */
+    .project-image-wrapper.empty-square {
+      aspect-ratio: 1 / 1;
+      background: #FDFCFB;
+      border: 1px dashed rgba(46, 46, 40, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-image-wrapper.empty-square::after {
+      content: "Image Placeholder";
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(46, 46, 40, 0.35);
+    }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #2B2B27;
+      /* Dark footer matching index.html */
+      padding: 60px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-name {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    .footer-contact {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .footer-contact a {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-contact a:hover {
+      color: var(--white);
+    }
+
+    .footer-copy {
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.06em;
+      margin-top: 12px;
+    }
+
+    /* ── Responsive Styling ────────────────────────── */
+    @media (max-width: 768px) {
+      nav {
+        padding: 20px 24px;
+      }
+
+      .project-header-section {
+        grid-template-columns: 1fr;
+        margin-top: 120px;
+        row-gap: 24px;
+      }
+
+      .project-title {
+        font-size: 32pt;
+      }
+
+      .project-images {
+        padding: 0 16px;
+      }
+
+      footer {
+        padding: 60px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-contact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">Maria Knop</a>
+    <ul class="nav-links">
+      <li><a href="index.html#intro">About</a></li>
+      <li><a href="index.html#portfolio">Work</a></li>
+      <li><a href="index.html#footer">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── PROJECT HEADER ── -->
+  <header class="project-header-section">
+    <div class="project-title-container">
+      <h1 class="project-title">Groovy</h1>
+    </div>
+
+    <div class="project-meta">
+      <div class="project-meta-label">Deliverables:</div>
+      <div class="project-meta-value">Logo, Icons, Postcards, Packaging</div>
+    </div>
+
+    <div class="project-description">
+      <p>Groovy is a specialty coffee brand rooted in third wave philosophy — where coffee is treated
+        as craft, and the barista acts as a cultural connector. The identity needed to feel as warm and
+        distinctive as the experience itself.</p>
+      <p>At its core is a character-driven logo: a winking face that greets from signage and shifts
+        expression across applications, echoing the human nuance baristas bring to each
+        interaction. A palette of soft, pastel tones intentionally departs from the austerity typical of
+        specialty coffee branding.</p>
+      <p>Each location carries its own theme — film, barbering, succulents — while the overarching
+        system keeps everything cohesive. Paper cup graphics draw on references like Soviet
+        ceramics, faded polka dots, and geometric folk motifs, creating a texture that feels familiar
+        rather than manufactured.</p>
+      <p>The result is a brand that goes beyond serving coffee — it creates a scene people want to
+        return to.</p>
+    </div>
+  </header>
+
+  <!-- ── GALLERY SECTION (5 Images) ── -->
+  <main class="project-images">
+
+    <!-- Image 1 -->
+    <div class="project-image-wrapper">
+      <img src="images/project-5/1.png" alt="EDDesign Award — Banner" />
+    </div>
+
+    <!-- Image 2 -->
+    <div class="project-image-wrapper">
+      <img src="images/project-5/2.png" alt="EDDesign Award — Brochure Exterior" />
+    </div>
+
+    <!-- Image 3 -->
+    <div class="project-image-wrapper">
+      <img src="images/project-5/3.png" alt="EDDesign Award — Brochure Interior" />
+    </div>
+
+    <!-- Image 4 -->
+    <div class="project-image-wrapper">
+      <img src="images/project-5/4.png" alt="EDDesign Award — Brochure Interior" />
+    </div>
+
+    <!-- Image 5 -->
+    <div class="project-image-wrapper">
+      <img src="images/project-5/5.png" alt="EDDesign Award — Brochure Interior" />
+    </div>
+
+    <!-- Image 6 -->
+    <div class="project-image-wrapper">
+      <img src="images/project-5/6.png" alt="EDDesign Award — Brochure Interior" />
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-name">Maria Knop</div>
+    <div class="footer-contact">
+      <a href="mailto:mashaknop@gmail.com">mashaknop@gmail.com</a>
+      <span style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">Brooklyn,
+        NY</span>
+    </div>
+    <p class="footer-copy">© 2025 Maria Knop — All rights reserved</p>
+  </footer>
+
+  <script>
+    // ── Custom cursor
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, .project-image-wrapper').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+  </script>
+
+</body>
+
+</html>
