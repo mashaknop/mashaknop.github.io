@@ -95,7 +95,7 @@ nav {
 
 .project-title {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 46pt;
+  font-size: 40pt;
   font-weight: bold;
   color: var(--black);
   line-height: 1.1;
@@ -105,7 +105,7 @@ nav {
 
 .project-meta {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 12pt;
+  font-size: 11pt;
   font-weight: normal;
   color: var(--gray);
   line-height: 1.6;
@@ -113,7 +113,7 @@ nav {
 
 .project-meta-label {
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
   color: var(--gray);
 }
 
@@ -121,16 +121,21 @@ nav {
   font-weight: normal;
 }
 
+.project-meta-value li {
+  list-style-position: inside;
+}
+
+
 .project-description {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14pt;
+  font-size: 11pt;
   font-weight: normal;
   color: var(--black);
   line-height: 1.6;
 }
 
 .project-description p {
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 
 .project-description p:last-child {
