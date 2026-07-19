@@ -539,12 +539,9 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-item .overlay {
-    opacity: 0.6;
-  }
-  
   .overlay-label {
     transform: none;
+    color: var(--dark);
   }
 
   .expertise {
@@ -566,7 +563,7 @@ footer {
     align-items: flex-start;
     gap: 16px;
   }
-  
+
   .expertise-item {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -581,9 +578,11 @@ footer {
   nav {
     padding: 16px;
   }
+
   .nav-links {
     gap: 8px;
   }
+
   .grid {
     grid-template-columns: 1fr;
   }
