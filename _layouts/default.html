@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} — Maria Knop{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ site.description }}" />
+  
+  {% if page.layout == "project" %}
+  <link rel="stylesheet" href="{{ '/project.css' | relative_url }}" />
+  {% else %}
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}" />
+  {% endif %}
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="{{ '/' | relative_url }}" class="nav-logo">Maria Knop</a>
+    <ul class="nav-links">
+      <li><a href="{{ '/' | relative_url }}#intro">About</a></li>
+      <li><a href="{{ '/' | relative_url }}#portfolio">Work</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+  </nav>
+
+  {{ content }}
+
+  <!-- ── FOOTER ── -->
+  <footer id="footer">
+    <div class="footer-name">Maria Knop</div>
+    <div class="footer-contact">
+      <a href="tel:+16195173084">+1 619 517 3084</a>
+      <a href="mailto:mashaknop@gmail.com">mashaknop@gmail.com</a>
+      <span class="footer-location">Brooklyn, NY</span>
+    </div>
+    <p class="footer-copy">© <span id="current-year">2025</span> Maria Knop — All rights reserved</p>
+  </footer>
+
+  <script src="{{ '/main.js' | relative_url }}"></script>
+
+</body>
+
+</html>

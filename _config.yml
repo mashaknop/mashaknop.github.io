@@ -1,0 +1,6 @@
+title: Maria Knop — Art Director
+description: Portfolio of Maria Knop — Art Director with 10+ years bridging creative vision and product thinking across brand identity, editorial, marketing, and digital products.
+collections:
+  projects:
+    output: true
+    permalink: /projects/:slug/

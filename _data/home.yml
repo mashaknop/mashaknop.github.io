@@ -1,0 +1,29 @@
+intro_text: >
+  Art Director with <em>10+ years</em> of experience bridging creative vision and product thinking. Equally
+  comfortable defining a brand's visual language and leading UX/UI teams delivering mobile and web products.
+  Proven ability to guide work from early concept through final execution across brand identity, editorial,
+  marketing campaigns, and digital products — while building and managing high-performing, cross-disciplinary
+  <em>design teams.</em>
+expertise:
+  - name: Creative Direction
+    bullets:
+      - Brand identity
+      - Visual systems
+      - Art direction
+      - Photography direction
+  - name: Editorial & Marketing
+    bullets:
+      - Campaign concepting
+      - Print & digital
+      - Packaging
+      - Content strategy
+  - name: UX / UI
+    bullets:
+      - Design systems
+      - Prototyping
+      - User research
+      - Interaction design
+quote: >
+  <em class="quote-highlight">Lines, fonts, shapes, textures</em> — raw materials waiting for
+  meaning. Add logic, structure, and genuine passion, and the result isn't just good design. <em
+  style="color:var(--tan);font-style:italic">It's the right one.</em>

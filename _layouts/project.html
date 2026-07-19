@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<!-- ── PROJECT HEADER ── -->
+<header class="project-header-section">
+  <div class="project-title-container">
+    <h1 class="project-title">{{ page.title }}</h1>
+  </div>
+
+  <div class="project-meta">
+    <div class="project-meta-label">Deliverables:</div>
+    <div class="project-meta-value">{{ page.deliverables }}</div>
+  </div>
+
+  <div class="project-description">
+    {% for paragraph in page.description %}
+    <p>{{ paragraph }}</p>
+    {% endfor %}
+  </div>
+</header>
+
+<!-- ── GALLERY SECTION ── -->
+<main class="project-images">
+  {% for image in page.images %}
+  <div class="project-image-wrapper">
+    <img src="{{ image.src | relative_url }}" alt="{{ image.alt | default: page.title }}" loading="lazy" />
+  </div>
+  {% endfor %}
+</main>

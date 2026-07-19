@@ -1,0 +1,68 @@
+---
+layout: default
+---
+<!-- ── HERO ── -->
+<section class="hero">
+  <h1 class="hero-name">
+    <span class="maria">Maria</span>
+    <span class="knop">Knop</span>
+  </h1>
+
+  <div class="hero-scroll">
+    <a href="#intro" class="arrow"><svg viewBox="0 0 664 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.88916 3.88916L331.987 331.987L660.084 3.88916" stroke="white" stroke-width="22" />
+      </svg></a>
+  </div>
+</section>
+
+<!-- ── INTRO ── -->
+<section class="intro" id="intro">
+  <div class="intro-inner">
+    <span class="intro-label js-reveal">About</span>
+    <p class="intro-text js-reveal">
+      {{ site.data.home.intro_text }}
+    </p>
+  </div>
+</section>
+
+<!-- ── AREAS OF EXPERTISE ── -->
+<section class="expertise">
+  <div class="expertise-inner">
+    <span class="expertise-label js-reveal">Areas of Expertise</span>
+    <div class="expertise-list">
+      {% for area in site.data.home.expertise %}
+      <div class="expertise-item js-reveal">
+        <span class="expertise-num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        <h3 class="expertise-name">{{ area.name }}</h3>
+        <ul class="expertise-bullets">
+          {% for bullet in area.bullets %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── PORTFOLIO ── -->
+<section class="portfolio" id="portfolio">
+  <div class="grid">
+    {% assign sorted_projects = site.projects | sort: 'order' %}
+    {% for project in sorted_projects %}
+    <a href="{{ project.url | relative_url }}" class="grid-item js-reveal">
+      <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}" loading="lazy" />
+      <div class="overlay">
+        <span class="overlay-label">{{ project.title }}</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ── QUOTE ── -->
+<section class="quote-section">
+  <p class="quote-text js-reveal">
+    {{ site.data.home.quote }}
+  </p>
+</section>
