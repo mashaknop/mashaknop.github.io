@@ -539,16 +539,6 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-item .overlay {
-    opacity: 1;
-    background: transparent;
-  }
-
-  .overlay-label {
-    transform: none;
-    color: var(--dark);
-  }
-
   .expertise {
     padding: 0 24px 80px;
   }
