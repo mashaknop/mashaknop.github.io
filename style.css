@@ -11,7 +11,7 @@
   --dark: #2B2B27;
   --cream: #F2EDE8;
   --white: #FFFFFF;
-  
+
 }
 
 html {
@@ -525,7 +525,7 @@ footer {
     padding: 80px 24px;
   }
 
-    .grid {
+  .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -547,6 +547,7 @@ footer {
     text-align: left;
   }
 }
+
 /* ── Added Global & Accessibility ──────────────── */
 nav.nav-scrolled {
   background: rgba(255, 255, 255, 0.85);
@@ -559,7 +560,12 @@ nav.nav-scrolled .nav-links a {
   color: var(--dark);
 }
 
-a:focus-visible, button:focus-visible {
+.nav-logo {
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
   outline: 2px solid var(--tan);
   outline-offset: 4px;
 }
@@ -577,7 +583,10 @@ a:focus-visible, button:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }

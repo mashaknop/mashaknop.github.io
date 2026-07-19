@@ -22,7 +22,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 const nav = document.querySelector('nav');
 if (nav) {
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > window.innerHeight) {
       nav.classList.add('nav-scrolled');
     } else {
       nav.classList.remove('nav-scrolled');
