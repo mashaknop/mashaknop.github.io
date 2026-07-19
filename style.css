@@ -539,7 +539,7 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-item:hover .overlay {
+  .grid-item .overlay {
     opacity: 1;
   }
 
