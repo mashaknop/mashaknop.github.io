@@ -64,6 +64,9 @@ nav {
   color: var(--white);
   text-decoration: none;
   transition: opacity 0.2s;
+  display: inline-block;
+  padding: 12px;
+  margin: -12px;
 }
 
 .nav-links a:hover {
@@ -106,7 +109,7 @@ nav {
 .hero-name .maria {
   display: block;
   font-weight: 700;
-  font-size: clamp(140px, 30vw, 380px);
+  font-size: clamp(80px, 25vw, 380px);
   line-height: 0.88;
   color: var(--white);
   white-space: nowrap;
@@ -121,7 +124,7 @@ nav {
 .hero-name .knop {
   display: block;
   font-weight: 700;
-  font-size: clamp(140px, 30vw, 380px);
+  font-size: clamp(80px, 25vw, 380px);
   line-height: 0.88;
   color: var(--white);
   white-space: nowrap;
@@ -464,6 +467,9 @@ footer {
   color: var(--tan);
   text-decoration: none;
   transition: color 0.2s;
+  display: inline-block;
+  padding: 12px;
+  margin: -12px;
 }
 
 .footer-contact a:hover {
@@ -517,6 +523,10 @@ footer {
     padding: 20px 24px;
   }
 
+  .nav-links {
+    gap: 16px;
+  }
+
   .hero-name {
     padding-left: 20px;
   }
@@ -527,6 +537,14 @@ footer {
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-item .overlay {
+    opacity: 0.6;
+  }
+  
+  .overlay-label {
+    transform: none;
   }
 
   .expertise {
@@ -545,6 +563,27 @@ footer {
 
   .footer-contact {
     text-align: left;
+  }
+  
+  .expertise-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .expertise-item:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 16px;
+  }
+  .nav-links {
+    gap: 8px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
 
