@@ -541,6 +541,7 @@ footer {
 
   .grid-item .overlay {
     opacity: 1;
+    background: transparent;
   }
 
   .overlay-label {
