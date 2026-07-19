@@ -9,7 +9,13 @@ layout: default
 
   <div class="project-meta">
     <div class="project-meta-label">Deliverables:</div>
-    <div class="project-meta-value">{{ page.deliverables }}</div>
+    <div class="project-meta-value">
+      <ul>
+        {% for deliverable in page.deliverables %}
+        <li>{{ deliverable }}</li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 
   <div class="project-description">
