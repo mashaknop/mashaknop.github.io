@@ -539,6 +539,10 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .grid-item:hover .overlay {
+    opacity: 1;
+  }
+
   .overlay-label {
     transform: none;
     color: var(--dark);
