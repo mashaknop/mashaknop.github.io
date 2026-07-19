@@ -11,8 +11,7 @@
   --dark: #2B2B27;
   --cream: #F2EDE8;
   --white: #FFFFFF;
-  --accent: #B5A494;
-  /* swapped to tan/beige */
+  
 }
 
 html {
@@ -21,8 +20,8 @@ html {
 
 body {
   background: var(--cream);
-  color: var(--dark);
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--dark);
   font-weight: 300;
   overflow-x: hidden;
 }
@@ -38,11 +37,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 28px 48px;
-  mix-blend-mode: normal;
 }
 
 .nav-logo {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 0.12em;
@@ -108,7 +105,6 @@ nav {
 /* "Maria" — 2× larger bold sans, left edge bleeds off left */
 .hero-name .maria {
   display: block;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: clamp(140px, 30vw, 380px);
   line-height: 0.88;
@@ -124,7 +120,6 @@ nav {
 /* "Knop" — same size, pushed right so right edge bleeds off screen */
 .hero-name .knop {
   display: block;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: clamp(140px, 30vw, 380px);
   line-height: 0.88;
@@ -191,7 +186,7 @@ nav {
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--tan);
   margin-bottom: 40px;
   opacity: 0;
   transform: translateY(20px);
@@ -206,7 +201,6 @@ nav {
 .intro-text {
   max-width: 960px;
   width: 100%;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(16px, 2vw, 24px);
   line-height: 1.35;
   color: var(--white);
@@ -248,7 +242,7 @@ a.grid-item {
 .grid-item {
   position: relative;
   overflow: hidden;
-  background: #ccc;
+  background: transparent;
   opacity: 0;
   transform: scale(0.97);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -301,20 +295,6 @@ a.grid-item {
 }
 
 /* Placeholder for items without real images */
-.grid-item.placeholder {
-  background: #E0D8D0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.grid-item.placeholder span {
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  color: var(--tan);
-  text-transform: uppercase;
-}
-
 /* ── Areas of Expertise ────────────────────────── */
 .expertise {
   background: var(--dark);
@@ -333,7 +313,7 @@ a.grid-item {
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--tan);
   margin-bottom: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 32px;
@@ -414,25 +394,16 @@ a.grid-item {
   display: block;
   font-size: 11px;
   letter-spacing: 0.15em;
-  color: var(--accent);
+  color: var(--tan);
   margin-bottom: 32px;
 }
 
 .expertise-name {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 20px;
   font-weight: 400;
   color: var(--white);
   margin-bottom: 14px;
   line-height: 1.2;
-}
-
-.expertise-desc {
-  font-size: 13px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.4);
-  font-weight: 300;
-  letter-spacing: 0.03em;
 }
 
 /* ── Quote ─────────────────────────────────────── */
@@ -446,7 +417,6 @@ a.grid-item {
 .quote-text {
   max-width: 960px;
   width: 100%;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(22px, 3vw, 36px);
   line-height: 1.35;
   color: var(--white);
@@ -473,7 +443,6 @@ footer {
 }
 
 .footer-name {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 30px;
   letter-spacing: 0.06em;
@@ -556,11 +525,7 @@ footer {
     padding: 80px 24px;
   }
 
-  .portfolio-label {
-    padding: 0 24px;
-  }
-
-  .grid {
+    .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -580,5 +545,40 @@ footer {
 
   .footer-contact {
     text-align: left;
+  }
+}
+/* ── Added Global & Accessibility ──────────────── */
+nav.nav-scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(46, 46, 40, 0.05);
+}
+
+nav.nav-scrolled .nav-logo,
+nav.nav-scrolled .nav-links a {
+  color: var(--dark);
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--tan);
+  outline-offset: 4px;
+}
+
+.quote-highlight {
+  color: var(--tan);
+  font-style: italic;
+}
+
+.footer-location {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tan);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

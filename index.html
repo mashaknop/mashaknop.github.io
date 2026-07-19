@@ -5,23 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maria Knop — Art Director</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
-    rel="stylesheet" />
-
+  <meta name="description" content="Portfolio of Maria Knop — Art Director with 10+ years bridging creative vision and product thinking across brand identity, editorial, marketing, and digital products." />
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- Custom cursor -->
-  <div class="cursor" id="cursor"></div>
-
   <!-- Navigation -->
   <nav>
-    <span class="nav-logo">Maria Knop</span>
+    <a href="index.html" class="nav-logo">Maria Knop</a>
     <ul class="nav-links">
       <li><a href="#intro">About</a></li>
       <li><a href="#portfolio">Work</a></li>
@@ -102,28 +95,28 @@
     <div class="grid">
 
       <a href="project-1.html" class="grid-item js-reveal">
-        <img src="images/project-1/2.png" alt="Simple Joy Inside" />
+        <img src="images/project-1/2.png" alt="Simple Joy Inside" loading="lazy" />
         <div class="overlay">
           <span class="overlay-label">Simple Joy Inside</span>
         </div>
       </a>
 
       <a href="project-3.html" class="grid-item js-reveal">
-        <img src="images/project-3/2.png" alt="Restaurant “Post Office”" />
+        <img src="images/project-3/2.png" alt="Restaurant “Post Office”" loading="lazy" />
         <div class="overlay">
           <span class="overlay-label">Restaurant “Post Office”</span>
         </div>
       </a>
 
       <a href="project-4.html" class="grid-item js-reveal">
-        <img src="images/project-4/1.png" alt="Martela EDD design conference" />
+        <img src="images/project-4/1.png" alt="Martela EDD design conference" loading="lazy" />
         <div class="overlay">
           <span class="overlay-label">Martela — Event Identity</span>
         </div>
       </a>
 
       <a href="project-2.html" class="grid-item js-reveal">
-        <img src="images/project-2/4.png" alt="Elementum" />
+        <img src="images/project-2/4.png" alt="Elementum" loading="lazy" />
         <div class="overlay">
           <span class="overlay-label">Elementum</span>
         </div>
@@ -131,21 +124,21 @@
 
 
       <a href="project-5.html" class="grid-item js-reveal">
-        <img src="images/project-5/2.png" alt="Groovy" />
+        <img src="images/project-5/2.png" alt="Groovy" loading="lazy" />
         <div class="overlay">
           <span class="overlay-label">Groovy</span>
         </div>
       </a>
 
       <a href="project-6.html" class="grid-item js-reveal">
-        <img src="images/project-6/2.png" alt="Mega Connect (by McKinsey & Company)" />
+        <img src="images/project-6/2.png" alt="Mega Connect (by McKinsey & Company)" loading="lazy" />
         <div class="overlay">
           <span class="overlay-label">Mega Connect (by McKinsey & Company)</span>
         </div>
       </a>
 
       <a href="project-7.html" class="grid-item js-reveal">
-        <img src="images/project-7/3.png" alt="Quantori Rebrand" />
+        <img src="images/project-7/3.png" alt="Quantori Rebrand" loading="lazy" />
         <div class="overlay">
           <span class="overlay-label">Quantori Rebrand</span>
         </div>
@@ -153,21 +146,21 @@
 
 
       <a href="project-8.html" class="grid-item js-reveal">
-        <img src="images/project-8/1.png" alt="Cell Therapy Findings Dashboard" />
+        <img src="images/project-8/1.png" alt="Cell Therapy Findings Dashboard" loading="lazy" />
         <div class="overlay">
           <span class="overlay-label">Cell Therapy Findings Dashboard</span>
         </div>
       </a>
 
       <a href="project-9.html" class="grid-item js-reveal">
-        <img src="images/project-9/1.png" alt="Enterprise Research Data Platform" />
+        <img src="images/project-9/1.png" alt="Enterprise Research Data Platform" loading="lazy" />
         <div class="overlay">
           <span class="overlay-label">Enterprise Research Data Platform</span>
         </div>
       </a>
 
       <a href="project-10.html" class="grid-item js-reveal">
-        <img src="images/project-10/1.png" alt="Simplifying Complex Interfaces" />
+        <img src="images/project-10/1.png" alt="Simplifying Complex Interfaces" loading="lazy" />
         <div class="overlay">
           <span class="overlay-label">Simplifying Complex Interfaces</span>
         </div>
@@ -179,7 +172,7 @@
   <!-- ── QUOTE ── -->
   <section class="quote-section">
     <p class="quote-text js-reveal">
-      <em style="color:var(--tan);font-style:italic">Lines, fonts, shapes, textures</em> — raw materials waiting for
+      <em class="quote-highlight">Lines, fonts, shapes, textures</em> — raw materials waiting for
       meaning. Add logic, structure, and genuine passion, and the result isn't just good design. <em
         style="color:var(--tan);font-style:italic">It's the right one.</em>
     </p>
@@ -191,9 +184,9 @@
     <div class="footer-contact">
       <a href="tel:+16195173084">+1 619 517 3084</a>
       <a href="mailto:mashaknop@gmail.com">mashaknop@gmail.com</a>
-      <span style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--tan);">Brooklyn, NY</span>
+      <span class="footer-location">Brooklyn, NY</span>
     </div>
-    <p class="footer-copy">© 2025 Maria Knop — All rights reserved</p>
+    <p class="footer-copy">© <span id="current-year">2025</span> Maria Knop — All rights reserved</p>
   </footer>
 
   <script src="main.js"></script>
